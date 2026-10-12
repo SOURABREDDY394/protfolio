@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Sourab Reddy — AI Engineer &amp; Full-Stack Developer</title>
 <meta name="description" content="Portfolio of Sourab Reddy, an AI Engineer and Full-Stack Developer specializing in RAG systems, LLM integrations, FastAPI backends, and React applications. Hyderabad, India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -340,14 +343,15 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   .sw{margin:12px 0;gap:6px;justify-content:center}.sw button{width:44px}.sw button::before{width:26px;height:26px}
   #nav .btn.ink{min-height:48px}
   .head.split,.hero-b,.about,.recog,.contact{grid-template-columns:minmax(0,1fr)}
-  .wall{--th:clamp(86px,22vw,130px)!important}
+  .wall{--th:clamp(76px,20vw,120px)!important}
   .wall-r .tile{flex:1 1 0!important;width:16.666%!important;min-width:0!important;overflow:hidden!important}
   .wall-r:last-child .tile{width:20%!important}
-  .wall-r .tile b{font-size:calc(var(--th)*0.72)!important;font-variation-settings:"wdth" 60!important;transform:none!important}
+  .wall-r .tile b{font-size:clamp(30px,8.5vw,46px)!important;line-height:1!important;max-width:100%!important;text-align:center!important;font-variation-settings:"wdth" 55!important;letter-spacing:-.03em!important;transform:none!important}
   .tile i,.hero .mk span+span{display:none}
   .wall-box{margin-top:clamp(16px,3.5vw,28px);margin-bottom:8px}
   .avail{position:absolute;right:10px;top:auto!important;bottom:-24px!important;width:66px!important;height:66px!important;z-index:10;transform:rotate(6deg);filter:drop-shadow(3px 3px 0 var(--ink))}
   .avail text{font-size:19px}
+  h2 em{white-space:normal!important;display:inline!important}
   .case-top{grid-template-columns:minmax(0,1fr);padding:24px 0 28px}
   .case .case-art{order:-1;transform:none!important;box-shadow:6px 6px 0 var(--shc,var(--ink))}
   .case-top:hover .case-art{transform:none!important}
@@ -368,48 +372,68 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   body{font-size:16px}
   section{padding:clamp(74px,11vw,94px) var(--pad) calc(var(--sheet) + clamp(36px,5vw,54px))}
   .hero{padding-top:clamp(84px,16vw,104px)}
+  .wall-r .tile b{font-size:clamp(22px,6.8vw,34px)!important;line-height:1!important;letter-spacing:-.04em!important}
   .mk{font-size:11.5px;letter-spacing:.12em;gap:8px;margin-bottom:14px}
   .mk b{min-width:38px;height:26px;font-size:12.5px}
-  h2{font-size:clamp(28px,7.2vw,38px);line-height:.96}
+  h2{font-size:clamp(24px,6.5vw,34px);line-height:1;word-break:break-word;overflow-wrap:break-word}
+  h2 em,.pitch em{white-space:normal!important;display:inline!important;word-break:break-word!important;overflow-wrap:break-word!important}
   .brand{font-size:15px;gap:7px}
   .brand svg{width:20px;height:20px}
   .mb{min-height:36px;padding:0 13px;font-size:12px}
-  .avail{width:62px!important;height:62px!important;bottom:-20px!important;right:8px!important;top:auto!important}
-  .avail text{font-size:18px}
-  .hero-b{margin-top:clamp(34px,7vw,44px)!important}
-  .pitch{font-size:clamp(22px,6.4vw,32px)}
+  .avail{width:56px!important;height:56px!important;bottom:-16px!important;right:6px!important;top:auto!important}
+  .avail text{font-size:17px}
+  .hero-b{margin-top:clamp(30px,6.5vw,40px)!important}
+  .pitch{font-size:clamp(20px,5.8vw,28px);word-break:break-word;overflow-wrap:break-word}
   .cta{flex-direction:column;align-items:stretch}
   .cta .btn{width:100%;justify-content:center}
-  .hero-f{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
+  .hero-f{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;font-size:11px!important;letter-spacing:.08em!important}
+  .hero-f li{word-break:break-word;overflow-wrap:break-word}
   .filter .chip{min-height:38px;padding:0 14px;font-size:13px}
-  .case-t{font-size:clamp(26px,6.8vw,36px)}
+  .case-no{font-size:11px!important;letter-spacing:.1em!important;flex-wrap:wrap!important;gap:6px!important}
+  .case-no::before{width:20px!important}
+  .case-t{font-size:clamp(24px,6.5vw,34px);word-break:break-word;overflow-wrap:break-word}
   .actions-row{gap:8px;margin-top:14px}
   .case-btn{width:100%;justify-content:center}
   .actions-row .repo-btn,.actions-row .live-btn{flex:1 1 calc(50% - 6px);justify-content:center;padding:0 10px;font-size:12px;min-height:44px}
-  .meta div{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 0;font-size:14px}
+  .meta div{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:8px 0;font-size:13.5px}
+  .meta dt{font-size:10.5px;letter-spacing:.12em}
+  .meta dd{width:100%;word-break:break-word;overflow-wrap:break-word}
+  .meta dd a{word-break:break-all}
   .res{grid-template-columns:minmax(0,1fr);gap:14px}
   .res li{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
-  .res b{font-size:clamp(34px,8.5vw,46px);line-height:1}
-  .facts,.two,.steps,.foot,.form-grid{grid-template-columns:minmax(0,1fr)}
+  .res b{font-size:clamp(32px,8vw,42px);line-height:1}
+  .facts{grid-template-columns:minmax(0,1fr)}
+  .facts div{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:10px 0;flex-wrap:wrap}
+  .facts dt{white-space:normal;font-size:11px;letter-spacing:.12em}
+  .facts dd{min-width:0;word-break:break-word;overflow-wrap:break-word;text-align:right}
+  .two,.steps,.foot,.form-grid{grid-template-columns:minmax(0,1fr)}
   .svc li{grid-template-columns:minmax(0,1fr);row-gap:8px;padding:18px 0;margin:0}
   .svc li>span:first-child{display:inline-block;font-size:13px;color:var(--zing);margin-bottom:2px}
-  .svc h3{font-size:clamp(26px,6.8vw,36px);line-height:1.05}
-  .svc h3 span{white-space:normal;display:inline}
-  .svc li p:not(.fee){grid-column:auto;margin:6px 0 10px}
+  .svc h3{font-size:clamp(24px,6.5vw,34px);line-height:1.05;word-break:break-word}
+  .svc h3 span{white-space:normal!important;display:inline!important}
+  .svc li p:not(.fee){grid-column:auto;margin:6px 0 10px;word-break:break-word}
+  .svc p small{word-break:break-word;overflow-wrap:break-word}
   .svc .fee{grid-column:auto;display:flex;align-items:baseline;gap:8px;font-size:16px}
   .svc .fee small{display:inline;margin:0}
-  .step{display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:14px}
-  .step .num{width:56px;height:56px;font-size:20px;grid-row:span 3}
-  .recog:not(.exp-list) .row{grid-template-columns:44px minmax(0,1fr);gap:8px}
+  .step{display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:12px}
+  .step .num{width:52px;height:52px;font-size:19px;grid-row:span 3}
+  .step h3{font-size:clamp(22px,5.5vw,32px);word-break:break-word}
+  .step p{word-break:break-word;overflow-wrap:break-word}
+  .recog:not(.exp-list) .row{grid-template-columns:40px minmax(0,1fr);gap:8px}
+  .recog:not(.exp-list) .row p{min-width:0;word-break:break-word;overflow-wrap:break-word}
   .recog:not(.exp-list) .row .stk{grid-column:2;justify-self:start;margin-top:4px}
   .exp-list .row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:8px}
-  .exp-list .row p{flex:1 1 180px}
+  .exp-list .row p{flex:1 1 160px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+  .exp-list .row p small{display:block;word-break:break-word;overflow-wrap:break-word}
+  .exp-list .row p a{word-break:break-all}
   .exp-list .row .stk{flex:none;align-self:flex-start}
+  .card{transform:none!important;box-shadow:6px 6px 0 var(--ink)!important;padding:20px 14px!important}
+  .card h3{font-size:clamp(22px,5.5vw,30px);word-break:break-word}
   .fld input[type=text],.fld input[type=email],.fld textarea{font-size:16px}
-  .mail{font-size:clamp(16px,4.6vw,24px);overflow-wrap:break-word;word-break:break-all}
+  .mail{font-size:clamp(15px,4.4vw,22px);overflow-wrap:break-word;word-break:break-all}
   .foot-n ul{columns:2}
   .ways{grid-template-columns:minmax(0,1fr)}
-  .foot-big{font-size:clamp(36px,11vw,72px)}
+  .foot-big{font-size:clamp(28px,8.5vw,56px)!important}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -539,9 +563,9 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
           <svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="CareCircle AI visual system">
             <rect class="c4" width="480" height="300"/>
             <!-- Live Badge -->
-            <rect class="c5 o" x="24" y="22" width="148" height="28" rx="14"/>
-            <circle cx="40" cy="36" r="4.5" fill="#10b981"/>
-            <text class="ts c6" x="52" y="40" font-size="9.5" letter-spacing="0.12em">AWS CLOUDFRONT</text>
+            <rect class="c5 o" x="20" y="20" width="160" height="28" rx="14"/>
+            <circle cx="34" cy="34" r="4.5" fill="#10b981"/>
+            <text class="ts c6" x="46" y="38" font-size="8.5" letter-spacing="0.08em">AWS CLOUDFRONT</text>
             <!-- Central Node Network -->
             <circle class="c5 o" cx="240" cy="144" r="92"/>
             <circle class="c1 o" cx="240" cy="144" r="56"/>
@@ -554,8 +578,8 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
             <line x1="347" y1="95" x2="295" y2="124" stroke="var(--ink)" stroke-width="3" stroke-dasharray="4 4"/>
             <line x1="133" y1="193" x2="185" y2="164" stroke="var(--ink)" stroke-width="3" stroke-dasharray="4 4"/>
             <line x1="347" y1="193" x2="295" y2="164" stroke="var(--ink)" stroke-width="3" stroke-dasharray="4 4"/>
-            <rect class="c5 o" x="140" y="244" width="200" height="30" rx="15"/>
-            <text class="t c6" x="240" y="265" text-anchor="middle" font-size="12.5">AUTONOMOUS DISPATCH</text>
+            <rect class="c5 o" x="130" y="244" width="220" height="32" rx="16"/>
+            <text class="t c6" x="240" y="265" text-anchor="middle" font-size="12">AUTONOMOUS DISPATCH</text>
           </svg>
         </figure>
       </div>
@@ -599,17 +623,17 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
           <svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="FastRAG Vector Search Visual">
             <rect class="c6" width="480" height="300"/>
             <!-- Vector Query Indicator -->
-            <rect class="c4 o" x="24" y="24" width="136" height="28" rx="14"/>
-            <circle cx="40" cy="38" r="5" fill="var(--ink)"/>
-            <text class="ts c6" x="52" y="42" font-size="10">PGVECTOR / 1536-D</text>
+            <rect class="c4 o" x="20" y="20" width="150" height="28" rx="14"/>
+            <circle cx="34" cy="34" r="4" fill="var(--ink)"/>
+            <text class="ts c6" x="46" y="38" font-size="8.5" letter-spacing="0.06em">PGVECTOR / 1536-D</text>
             <!-- Live Badge -->
-            <rect class="c5 o" x="325" y="24" width="130" height="28" rx="14"/>
-            <circle cx="340" cy="38" r="5" fill="#10b981"/>
-            <text class="ts c6" x="352" y="42" font-size="10">VERCEL LIVE</text>
-            <circle cx="240" cy="150" r="110" stroke="var(--zing)" stroke-width="1.8" fill="none" stroke-dasharray="6 6"/>
-            <circle cx="240" cy="150" r="65" stroke="var(--sweet)" stroke-width="2.2" fill="none"/>
-            <rect class="c1 o" x="190" y="122" width="100" height="56" rx="10"/>
-            <text class="t c5" x="240" y="157" text-anchor="middle" font-size="19">EMBED</text>
+            <rect class="c5 o" x="325" y="20" width="135" height="28" rx="14"/>
+            <circle cx="339" cy="34" r="4" fill="#10b981"/>
+            <text class="ts c6" x="351" y="38" font-size="8.5" letter-spacing="0.06em">VERCEL LIVE</text>
+            <circle cx="240" cy="145" r="105" stroke="var(--zing)" stroke-width="1.8" fill="none" stroke-dasharray="6 6"/>
+            <circle cx="240" cy="145" r="62" stroke="var(--sweet)" stroke-width="2.2" fill="none"/>
+            <rect class="c1 o" x="190" y="118" width="100" height="54" rx="10"/>
+            <text class="t c5" x="240" y="152" text-anchor="middle" font-size="18">EMBED</text>
             <rect class="c5 o" x="60" y="70" width="75" height="90" rx="8"/>
             <line x1="75" y1="92" x2="120" y2="92" stroke="var(--ink)" stroke-width="3"/>
             <line x1="75" y1="108" x2="115" y2="108" stroke="var(--ink)" stroke-width="3"/>
@@ -617,9 +641,9 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
             <rect class="c3 o" x="345" y="70" width="75" height="90" rx="8"/>
             <line x1="360" y1="92" x2="405" y2="92" stroke="var(--ink)" stroke-width="3"/>
             <line x1="360" y1="108" x2="400" y2="108" stroke="var(--ink)" stroke-width="3"/>
-            <rect class="c4 o" x="190" y="215" width="100" height="60" rx="30"/>
-            <text class="t c6" x="240" y="252" text-anchor="middle" font-size="20">RAG</text>
-            <path d="M135 115 L190 145 M345 115 L290 145 M240 178 L240 215" stroke="var(--paper)" stroke-width="3" stroke-linecap="round"/>
+            <rect class="c4 o" x="190" y="212" width="100" height="56" rx="28"/>
+            <text class="t c6" x="240" y="247" text-anchor="middle" font-size="19">RAG</text>
+            <path d="M135 115 L190 145 M345 115 L290 145 M240 172 L240 212" stroke="var(--paper)" stroke-width="3" stroke-linecap="round"/>
           </svg>
         </figure>
       </div>
@@ -667,19 +691,20 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
             <circle class="c1" cx="62" cy="49" r="6"/>
             <circle class="c4" cx="82" cy="49" r="6"/>
             <circle class="c3" cx="102" cy="49" r="6"/>
-            <text class="t c5" x="240" y="55" text-anchor="middle" font-size="14">EVENTOS AI PLATFORM • VERCEL LIVE</text>
-            <rect class="c4 o" x="65" y="88" width="170" height="72" rx="10"/>
-            <text class="ts c6" x="80" y="112" font-size="10">CONFIRMED ATTENDEES</text>
-            <text class="t c6" x="80" y="144" font-size="26">1,480 PAX</text>
-            <rect class="c5 o" x="260" y="88" width="150" height="72" rx="10"/>
-            <rect class="c6" x="275" y="100" width="18" height="18"/>
-            <rect class="c6" x="305" y="100" width="18" height="18"/>
-            <rect class="c6" x="275" y="130" width="18" height="18"/>
-            <rect class="c6" x="305" y="130" width="10" height="10"/>
-            <text class="ts c6" x="340" y="125" font-size="10">QR PASS</text>
-            <text class="t c6" x="340" y="145" font-size="13">VERIFIED</text>
-            <rect class="c1 o" x="65" y="180" width="350" height="60" rx="12"/>
-            <text class="ts c5" x="85" y="214" font-size="12">✨ GROQ AI: "Generate sponsor packages &amp; budget sheet"</text>
+            <text class="t c5" x="240" y="54" text-anchor="middle" font-size="11" letter-spacing="0.06em">EVENTOS AI PLATFORM • VERCEL LIVE</text>
+            <rect class="c4 o" x="55" y="75" width="175" height="72" rx="10"/>
+            <text class="ts c6" x="70" y="98" font-size="9" letter-spacing="0.06em">CONFIRMED ATTENDEES</text>
+            <text class="t c6" x="70" y="130" font-size="24">1,480 PAX</text>
+            <rect class="c5 o" x="250" y="75" width="175" height="72" rx="10"/>
+            <rect class="c6" x="268" y="87" width="16" height="16"/>
+            <rect class="c6" x="296" y="87" width="16" height="16"/>
+            <rect class="c6" x="268" y="115" width="16" height="16"/>
+            <rect class="c6" x="296" y="115" width="8" height="8"/>
+            <text class="ts c6" x="330" y="110" font-size="9" letter-spacing="0.06em">QR PASS</text>
+            <text class="t c6" x="330" y="130" font-size="12">VERIFIED</text>
+            <rect class="c1 o" x="55" y="165" width="370" height="75" rx="12"/>
+            <text class="ts c4" x="75" y="193" font-size="9" letter-spacing="0.08em">✨ GROQ AI PROMPT PIPELINE</text>
+            <text class="t c5" x="75" y="220" font-size="11.5">"Scaffold sponsor packages &amp; budget sheet"</text>
           </svg>
         </figure>
       </div>
@@ -722,34 +747,34 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
         <figure class="case-art">
           <svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="MeetCost Corporate Intelligence Visual">
             <rect class="c1" width="480" height="300"/>
-            <rect class="c5 o" x="40" y="25" width="400" height="250" rx="16"/>
+            <rect class="c5 o" x="35" y="20" width="410" height="260" rx="16"/>
             <!-- Top Status Badges -->
-            <rect class="c6" x="55" y="40" width="130" height="26" rx="13"/>
-            <circle cx="70" cy="53" r="4.5" fill="#10b981"/>
-            <text class="ts c5" x="80" y="57" font-size="9">VERCEL LIVE</text>
-            <rect class="c4 o" x="195" y="40" width="150" height="26" rx="13"/>
-            <circle cx="210" cy="53" r="4.5" fill="var(--ink)"/>
-            <text class="ts c6" x="220" y="57" font-size="9">LLAMA 3.3 70B • GROQ</text>
+            <rect class="c6" x="50" y="34" width="120" height="26" rx="13"/>
+            <circle cx="64" cy="47" r="4" fill="#10b981"/>
+            <text class="ts c5" x="74" y="50" font-size="8.5" letter-spacing="0.06em">VERCEL LIVE</text>
+            <rect class="c4 o" x="180" y="34" width="170" height="26" rx="13"/>
+            <circle cx="194" cy="47" r="4" fill="var(--ink)"/>
+            <text class="ts c6" x="206" y="50" font-size="8" letter-spacing="0.05em">LLAMA 3.3 70B • GROQ</text>
             <!-- Dashboard stats -->
-            <rect class="c2 o" x="55" y="80" width="175" height="70" rx="10"/>
-            <text class="ts c5" x="70" y="103" font-size="9.5">TOTAL MEETING BURN</text>
-            <text class="t c5" x="70" y="132" font-size="21">$18,450</text>
-            <rect class="c4 o" x="245" y="80" width="180" height="70" rx="10"/>
-            <text class="ts c6" x="258" y="103" font-size="9.5">RESCUE POTENTIAL</text>
-            <text class="t c6" x="258" y="132" font-size="20">+$5.8K / MO</text>
+            <rect class="c2 o" x="50" y="70" width="180" height="72" rx="10"/>
+            <text class="ts c5" x="65" y="92" font-size="8.5" letter-spacing="0.06em">TOTAL MEETING BURN</text>
+            <text class="t c5" x="65" y="124" font-size="20">$18,450</text>
+            <rect class="c4 o" x="245" y="70" width="185" height="72" rx="10"/>
+            <text class="ts c6" x="258" y="92" font-size="8.5" letter-spacing="0.06em">RESCUE POTENTIAL</text>
+            <text class="t c6" x="258" y="124" font-size="20">+$5.8K / MO</text>
             <!-- Cost Burn chart bars & Anomaly alert -->
-            <rect class="c6" x="55" y="165" width="220" height="90" rx="10"/>
-            <text class="ts c4" x="70" y="188" font-size="9.5">DEPARTMENT COST PROFILE</text>
-            <rect class="c1" x="70" y="225" width="28" height="20" rx="3"/>
-            <rect class="c4" x="108" y="205" width="28" height="40" rx="3"/>
-            <rect class="c3" x="146" y="215" width="28" height="30" rx="3"/>
-            <rect class="c5" x="184" y="198" width="28" height="47" rx="3"/>
-            <rect class="c2" x="222" y="210" width="28" height="35" rx="3"/>
+            <rect class="c6" x="50" y="152" width="225" height="110" rx="10"/>
+            <text class="ts c4" x="65" y="174" font-size="8.5" letter-spacing="0.06em">DEPARTMENT COST PROFILE</text>
+            <rect class="c1" x="65" y="225" width="30" height="24" rx="3"/>
+            <rect class="c4" x="105" y="203" width="30" height="46" rx="3"/>
+            <rect class="c3" x="145" y="213" width="30" height="36" rx="3"/>
+            <rect class="c5" x="185" y="193" width="30" height="56" rx="3"/>
+            <rect class="c2" x="225" y="207" width="30" height="42" rx="3"/>
             <!-- AI Anomaly Box -->
-            <rect class="c3 o" x="290" y="165" width="135" height="90" rx="10"/>
-            <text class="ts c6" x="302" y="188" font-size="8.5">AI BLOAT DETECT</text>
-            <text class="t c6" x="302" y="213" font-size="13">12 STANDUPS</text>
-            <text class="ts c6" x="302" y="236" font-size="8.5">&gt;10 ATTENDEES</text>
+            <rect class="c3 o" x="288" y="152" width="142" height="110" rx="10"/>
+            <text class="ts c6" x="300" y="174" font-size="8" letter-spacing="0.06em">AI BLOAT DETECT</text>
+            <text class="t c6" x="300" y="202" font-size="13">12 STANDUPS</text>
+            <text class="ts c6" x="300" y="226" font-size="8" letter-spacing="0.06em">&gt;10 ATTENDEES</text>
           </svg>
         </figure>
       </div>
@@ -800,20 +825,20 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
             <text class="t c5" x="90" y="148" text-anchor="middle" font-size="16">TASK</text>
             <text class="ts c5" x="90" y="174" text-anchor="middle" font-size="9.5">PROMPT</text>
             <!-- Arrow 1: Connecting Task to LangGraph -->
-            <path d="M142 142 L176 142" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round"/>
-            <polygon points="176,136 185,142 176,148" fill="var(--ink)"/>
+            <path d="M142 142 L172 142" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round"/>
+            <polygon points="172,136 180,142 172,148" fill="var(--ink)"/>
             <!-- Step 2: LangGraph Core Orchestrator -->
-            <rect class="c4 o" x="185" y="58" width="118" height="170" rx="14"/>
-            <rect class="c6" x="199" y="70" width="90" height="22" rx="11"/>
-            <text class="ts c4" x="244" y="85" text-anchor="middle" font-size="8.5">REASONING</text>
-            <text class="t c6" x="244" y="132" text-anchor="middle" font-size="15">LANGGRAPH</text>
-            <text class="ts c6" x="244" y="156" text-anchor="middle" font-size="9">AGENT GRAPH</text>
-            <circle cx="224" cy="186" r="5.5" fill="var(--deep)"/>
-            <circle cx="244" cy="186" r="5.5" fill="var(--hot)"/>
-            <circle cx="264" cy="186" r="5.5" fill="var(--sweet)"/>
+            <rect class="c4 o" x="180" y="58" width="124" height="170" rx="14"/>
+            <rect class="c6" x="196" y="70" width="92" height="22" rx="11"/>
+            <text class="ts c4" x="242" y="85" text-anchor="middle" font-size="8.5">REASONING</text>
+            <text class="t c6" x="242" y="132" text-anchor="middle" font-size="13.5" letter-spacing="0.04em">LANGGRAPH</text>
+            <text class="ts c6" x="242" y="156" text-anchor="middle" font-size="8.5">AGENT GRAPH</text>
+            <circle cx="222" cy="186" r="5.5" fill="var(--deep)"/>
+            <circle cx="242" cy="186" r="5.5" fill="var(--hot)"/>
+            <circle cx="262" cy="186" r="5.5" fill="var(--sweet)"/>
             <!-- Arrow 2: Connecting LangGraph to Action -->
-            <path d="M303 142 L333 142" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round"/>
-            <polygon points="333,136 342,142 333,148" fill="var(--ink)"/>
+            <path d="M304 142 L334 142" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round"/>
+            <polygon points="334,136 342,142 334,148" fill="var(--ink)"/>
             <!-- Step 3: Action Execution Box -->
             <rect class="c3 o" x="342" y="72" width="104" height="140" rx="14"/>
             <rect class="c5 o" x="354" y="84" width="80" height="22" rx="11"/>
@@ -865,9 +890,9 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
           <svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Hood Commerce Visual">
             <rect class="c3" width="480" height="300"/>
             <!-- Play Store Badge -->
-            <rect class="c5 o" x="24" y="24" width="130" height="28" rx="14"/>
-            <circle cx="40" cy="38" r="5" fill="#10b981"/>
-            <text class="ts c6" x="52" y="42" font-size="10">GOOGLE PLAY APP</text>
+            <rect class="c5 o" x="20" y="20" width="146" height="28" rx="14"/>
+            <circle cx="34" cy="34" r="4.5" fill="#10b981"/>
+            <text class="ts c6" x="46" y="38" font-size="8.5" letter-spacing="0.06em">GOOGLE PLAY APP</text>
             <rect class="c5 o" x="140" y="30" width="200" height="240" rx="20"/>
             <rect class="c6" x="175" y="45" width="130" height="12" rx="6"/>
             <rect class="c4 o" x="155" y="70" width="80" height="55" rx="8"/>
@@ -1353,6 +1378,11 @@ const probe=el=>{
 const solve=(p,t)=>p[2]-p[0]<2?null:t<=p[0]?50:t>=p[2]?150:t<p[1]?50+50*(t-p[0])/(p[1]-p[0]):100+50*(t-p[1])/(p[2]-p[1]);
 const fitEls=$$('[data-fit]'),ems=$$('h2 em');
 function fitAll(){
+  if(window.innerWidth<=860){
+    ems.forEach(el=>{el.style.fontSize='';el.style.removeProperty('--wide');});
+    fitEls.forEach(el=>{el.style.fontSize='';el.style.removeProperty('--w');el.style.removeProperty('--wh');});
+    return;
+  }
   fitEls.forEach(el=>{
     if(el.offsetParent===null)return;
     const box=el.parentElement,W=box.clientWidth;if(!W)return;
