@@ -340,19 +340,20 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   .sw{margin:12px 0;gap:6px;justify-content:center}.sw button{width:44px}.sw button::before{width:26px;height:26px}
   #nav .btn.ink{min-height:48px}
   .head.split,.hero-b,.about,.recog,.contact{grid-template-columns:minmax(0,1fr)}
-  .wall{--th:clamp(92px,24vw,150px)}
-  .wall-r .tile{flex:1 1 0!important;--g:1!important}
-  .wall-r .tile b{font-size:calc(var(--th)*0.84)!important;transform:none!important}
+  .wall{--th:clamp(86px,22vw,130px)!important}
+  .wall-r .tile{flex:1 1 0!important;width:16.666%!important;min-width:0!important;overflow:hidden!important}
+  .wall-r:last-child .tile{width:20%!important}
+  .wall-r .tile b{font-size:calc(var(--th)*0.72)!important;font-variation-settings:"wdth" 60!important;transform:none!important}
   .tile i,.hero .mk span+span{display:none}
-  .wall-box{margin-top:clamp(20px,4vw,32px)}
-  .avail{position:absolute;right:10px;top:auto!important;bottom:-30px!important;width:74px;height:74px;z-index:10;transform:rotate(6deg);filter:drop-shadow(3px 3px 0 var(--ink))}
+  .wall-box{margin-top:clamp(16px,3.5vw,28px);margin-bottom:8px}
+  .avail{position:absolute;right:10px;top:auto!important;bottom:-24px!important;width:66px!important;height:66px!important;z-index:10;transform:rotate(6deg);filter:drop-shadow(3px 3px 0 var(--ink))}
   .avail text{font-size:19px}
   .case-top{grid-template-columns:minmax(0,1fr);padding:24px 0 28px}
   .case .case-art{order:-1;transform:none!important;box-shadow:6px 6px 0 var(--shc,var(--ink))}
   .case-top:hover .case-art{transform:none!important}
   .case-grid{grid-template-columns:minmax(0,1fr)}
   .res{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-  .filter-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:20px}
+  .filter-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:18px}
   .filter{display:flex;flex-wrap:nowrap;overflow-x:auto;width:100%;padding:4px 0 8px;margin:0;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:8px}
   .filter::-webkit-scrollbar{display:none}
   .filter .chip{flex:none;white-space:nowrap}
@@ -366,13 +367,16 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   :root{--hd:52px;--pad:14px;--r:14px}
   body{font-size:16px}
   section{padding:clamp(74px,11vw,94px) var(--pad) calc(var(--sheet) + clamp(36px,5vw,54px))}
-  .hero{padding-top:clamp(86px,16vw,108px)}
+  .hero{padding-top:clamp(84px,16vw,104px)}
+  .mk{font-size:11.5px;letter-spacing:.12em;gap:8px;margin-bottom:14px}
+  .mk b{min-width:38px;height:26px;font-size:12.5px}
   h2{font-size:clamp(28px,7.2vw,38px);line-height:.96}
   .brand{font-size:15px;gap:7px}
   .brand svg{width:20px;height:20px}
   .mb{min-height:36px;padding:0 13px;font-size:12px}
-  .avail{width:68px;height:68px;bottom:-26px!important;right:8px;top:auto!important}
+  .avail{width:62px!important;height:62px!important;bottom:-20px!important;right:8px!important;top:auto!important}
   .avail text{font-size:18px}
+  .hero-b{margin-top:clamp(34px,7vw,44px)!important}
   .pitch{font-size:clamp(22px,6.4vw,32px)}
   .cta{flex-direction:column;align-items:stretch}
   .cta .btn{width:100%;justify-content:center}
@@ -382,6 +386,7 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   .actions-row{gap:8px;margin-top:14px}
   .case-btn{width:100%;justify-content:center}
   .actions-row .repo-btn,.actions-row .live-btn{flex:1 1 calc(50% - 6px);justify-content:center;padding:0 10px;font-size:12px;min-height:44px}
+  .meta div{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 0;font-size:14px}
   .res{grid-template-columns:minmax(0,1fr);gap:14px}
   .res li{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
   .res b{font-size:clamp(34px,8.5vw,46px);line-height:1}
@@ -401,7 +406,7 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   .exp-list .row p{flex:1 1 180px}
   .exp-list .row .stk{flex:none;align-self:flex-start}
   .fld input[type=text],.fld input[type=email],.fld textarea{font-size:16px}
-  .mail{font-size:clamp(20px,5.5vw,30px)}
+  .mail{font-size:clamp(16px,4.6vw,24px);overflow-wrap:break-word;word-break:break-all}
   .foot-n ul{columns:2}
   .ways{grid-template-columns:minmax(0,1fr)}
   .foot-big{font-size:clamp(36px,11vw,72px)}
