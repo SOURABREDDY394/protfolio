@@ -12,7 +12,7 @@
   Interactive 3D WebGL portfolio showcasing autonomous AI systems, dense RAG pipelines, and high-performance full-stack applications.
 </p>
 
-[**Explore Live Demo**](https://sourabreddy.vercel.app) · [**Report Bug**](https://github.com/SOURABREDDY394/protfolio/issues) · [**Request Feature**](https://github.com/SOURABREDDY394/protfolio/issues)
+[**Explore Live Demo**](https://test-kohl-two-hsyu9gdvv0.vercel.app) · [**Report Bug**](https://github.com/SOURABREDDY394/protfolio/issues) · [**Request Feature**](https://github.com/SOURABREDDY394/protfolio/issues)
 
 </div>
 
