@@ -65,8 +65,9 @@ ul,ol{padding:0;list-style:none}
 .t{font-family:var(--display);font-weight:900;font-variation-settings:"wdth" 110}
 .ts{font-family:var(--text);font-weight:700;letter-spacing:.14em}
 
-/* Floating Header Pill */
-.hd{position:fixed;z-index:60;top:12px;left:max(var(--pad),calc((100% - 1360px)/2));right:max(var(--pad),calc((100% - 1360px)/2));height:var(--hd);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:0 9px 0 20px;background:var(--paper);border:var(--line) solid var(--ink);border-radius:999px;box-shadow:5px 5px 0 var(--ink);transition:background .2s,box-shadow .2s}
+.hd{position:fixed;z-index:60;top:12px;left:max(var(--pad),calc((100% - 1360px)/2));right:max(var(--pad),calc((100% - 1360px)/2));height:var(--hd);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:0 9px 0 20px;background:var(--paper);border:var(--line) solid var(--ink);border-radius:999px;box-shadow:5px 5px 0 var(--ink);transition:transform .3s var(--ease),background .2s,box-shadow .2s}
+.hd.hd-hidden{transform:translateY(-140%)}
+section,.case,h2,.head{scroll-margin-top:calc(var(--hd) + 24px)}
 .brand{display:flex;align-items:center;gap:9px;min-height:44px;font:900 18px/1 var(--display);font-variation-settings:"wdth" 125;text-transform:uppercase;text-decoration:none;white-space:nowrap}
 .brand svg{flex:none;width:24px;height:24px;fill:var(--hot);stroke:var(--ink);stroke-width:5;transition:transform .7s var(--ease)}
 .brand:hover svg{transform:rotate(180deg)}
@@ -145,8 +146,9 @@ html.js .rv.in{opacity:1;transform:none}
 .hero-f b{font:900 15px/1 var(--display);letter-spacing:.02em}
 
 /* ---- 02 PROJECTS SECTION ---- */
-.filter{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:clamp(24px,3vw,40px)}
-.count{margin-left:auto;font:600 12.5px/1 var(--text);letter-spacing:.16em;text-transform:uppercase}
+.filter-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:clamp(24px,3vw,40px)}
+.filter{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.count{font:600 12.5px/1 var(--text);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
 .cases{margin:clamp(30px,3.6vw,52px) calc(var(--pad)*-1) 0;border-bottom:var(--line) solid var(--ink)}
 .case{position:relative;padding:0 var(--pad);background:var(--bg);color:var(--fg);border-top:var(--line) solid var(--ink)}
 .case.pop{animation:pop .5s var(--ease)}
@@ -159,15 +161,16 @@ html.js .rv.in{opacity:1;transform:none}
 .case-line{max-width:44ch;font-size:clamp(16px,1.3vw,20px);line-height:1.45}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
 .actions-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:20px}
-.case-btn{min-height:46px;padding:0 20px;font-size:13px}
-.case-btn i{position:relative;width:14px;height:14px;transition:transform .35s var(--ease)}
-.case-btn i::before,.case-btn i::after{content:"";position:absolute;inset:5.5px 0;background:currentColor}
-.case-btn i::after{transform:rotate(90deg)}
-.case.open .case-btn i{transform:rotate(45deg)}
-.btn.repo-btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);border:var(--line) solid var(--ink);min-height:46px;padding:0 20px;font-size:13px;box-shadow:4px 4px 0 var(--fg)}
+.case-btn{min-height:46px;padding:0 20px;font-size:13px;box-shadow:4px 4px 0 var(--ink)}
+.btn.repo-btn{display:inline-flex;align-items:center;gap:8px;background:var(--paper);color:var(--ink);border:var(--line) solid var(--ink);min-height:46px;padding:0 20px;font-size:13px;box-shadow:4px 4px 0 var(--ink)}
 .btn.repo-btn:hover{background:var(--zing);color:var(--ink);box-shadow:6px 6px 0 var(--ink)}
 .btn.live-btn{display:inline-flex;align-items:center;gap:8px;background:var(--zing);color:var(--ink);border:var(--line) solid var(--ink);min-height:46px;padding:0 20px;font-size:13px;box-shadow:4px 4px 0 var(--ink)}
-.btn.live-btn:hover{background:var(--paper);color:var(--ink);box-shadow:6px 6px 0 var(--ink)}
+.btn.live-btn:hover{background:var(--hot);color:#fff;box-shadow:6px 6px 0 var(--ink)}
+.case.f-ink .actions-row .case-btn{box-shadow:4px 4px 0 var(--hot)}
+.case.f-ink .actions-row .repo-btn{background:var(--paper);color:var(--ink);border:var(--line) solid var(--ink);box-shadow:4px 4px 0 var(--hot)}
+.case.f-ink .actions-row .repo-btn:hover{background:var(--zing);color:var(--ink)}
+.case.f-ink .actions-row .live-btn{background:var(--zing);color:var(--ink);border:var(--line) solid var(--ink);box-shadow:4px 4px 0 var(--hot)}
+.case.f-ink .actions-row .live-btn:hover{background:var(--hot);color:#fff}
 .case-art{position:relative;aspect-ratio:16/10;border:var(--line) solid var(--ink);border-radius:var(--r);overflow:hidden;background:var(--paper);box-shadow:8px 8px 0 var(--shc,var(--ink));transform:rotate(var(--rot,-2deg));transition:transform .5s var(--ease)}
 .case-art svg,.case-art img{width:100%;height:100%;object-fit:cover}
 .case-top:hover .case-art{transform:rotate(0deg) scale(1.02)}
@@ -337,15 +340,23 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   .sw{margin:12px 0;gap:6px;justify-content:center}.sw button{width:44px}.sw button::before{width:26px;height:26px}
   #nav .btn.ink{min-height:48px}
   .head.split,.hero-b,.about,.recog,.contact{grid-template-columns:minmax(0,1fr)}
-  .wall{--th:clamp(92px,25vw,160px)}
+  .wall{--th:clamp(92px,24vw,150px)}
+  .wall-r .tile{flex:1 1 0!important;--g:1!important}
+  .wall-r .tile b{font-size:calc(var(--th)*0.84)!important;transform:none!important}
   .tile i,.hero .mk span+span{display:none}
-  .avail{right:0;top:-50px;width:clamp(88px,18vw,120px)}
-  .case-top{grid-template-columns:minmax(0,1fr);padding:28px 0 32px}
+  .wall-box{margin-top:clamp(20px,4vw,32px)}
+  .avail{position:absolute;right:10px;top:auto!important;bottom:-30px!important;width:74px;height:74px;z-index:10;transform:rotate(6deg);filter:drop-shadow(3px 3px 0 var(--ink))}
+  .avail text{font-size:19px}
+  .case-top{grid-template-columns:minmax(0,1fr);padding:24px 0 28px}
   .case .case-art{order:-1;transform:none!important;box-shadow:6px 6px 0 var(--shc,var(--ink))}
   .case-top:hover .case-art{transform:none!important}
   .case-grid{grid-template-columns:minmax(0,1fr)}
   .res{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-  .count{width:100%;margin:8px 0 0}
+  .filter-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:20px}
+  .filter{display:flex;flex-wrap:nowrap;overflow-x:auto;width:100%;padding:4px 0 8px;margin:0;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:8px}
+  .filter::-webkit-scrollbar{display:none}
+  .filter .chip{flex:none;white-space:nowrap}
+  .count{display:block;width:100%;margin:0;font-size:11.5px;opacity:.85}
   .portrait{max-width:320px;margin:16px auto 0;transform:none}
   .portrait .ph{box-shadow:6px 6px 0 var(--ink)}
   .portrait .burst{left:-16px;top:-24px;width:clamp(88px,20vw,110px);transform:rotate(-6deg)}
@@ -354,28 +365,28 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
 @media (max-width:560px){
   :root{--hd:52px;--pad:14px;--r:14px}
   body{font-size:16px}
-  section{padding:clamp(68px,8vw,90px) var(--pad) calc(var(--sheet) + clamp(40px,5vw,60px))}
-  h2{font-size:clamp(30px,7.5vw,42px);line-height:.96}
+  section{padding:clamp(74px,11vw,94px) var(--pad) calc(var(--sheet) + clamp(36px,5vw,54px))}
+  .hero{padding-top:clamp(86px,16vw,108px)}
+  h2{font-size:clamp(28px,7.2vw,38px);line-height:.96}
   .brand{font-size:15px;gap:7px}
   .brand svg{width:20px;height:20px}
   .mb{min-height:36px;padding:0 13px;font-size:12px}
-  .avail{width:80px;top:-40px;right:-2px;filter:drop-shadow(3px 3px 0 var(--ink))}
+  .avail{width:68px;height:68px;bottom:-26px!important;right:8px;top:auto!important}
   .avail text{font-size:18px}
-  .pitch{font-size:clamp(24px,6.8vw,34px)}
+  .pitch{font-size:clamp(22px,6.4vw,32px)}
   .cta{flex-direction:column;align-items:stretch}
   .cta .btn{width:100%;justify-content:center}
-  .hero-f{flex-direction:column;gap:8px}
-  .filter{gap:6px}
+  .hero-f{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
   .filter .chip{min-height:38px;padding:0 14px;font-size:13px}
   .case-t{font-size:clamp(26px,6.8vw,36px)}
-  .actions-row{gap:8px}
+  .actions-row{gap:8px;margin-top:14px}
   .case-btn{width:100%;justify-content:center}
   .actions-row .repo-btn,.actions-row .live-btn{flex:1 1 calc(50% - 6px);justify-content:center;padding:0 10px;font-size:12px;min-height:44px}
   .res{grid-template-columns:minmax(0,1fr);gap:14px}
   .res li{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
   .res b{font-size:clamp(34px,8.5vw,46px);line-height:1}
   .facts,.two,.steps,.foot,.form-grid{grid-template-columns:minmax(0,1fr)}
-  .svc li{grid-template-columns:minmax(0,1fr);row-gap:8px;padding:20px 0}
+  .svc li{grid-template-columns:minmax(0,1fr);row-gap:8px;padding:18px 0;margin:0}
   .svc li>span:first-child{display:inline-block;font-size:13px;color:var(--zing);margin-bottom:2px}
   .svc h3{font-size:clamp(26px,6.8vw,36px);line-height:1.05}
   .svc h3 span{white-space:normal;display:inline}
@@ -493,11 +504,13 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
       <h2>Built with code &amp; <em>intelligence.</em></h2>
       <p class="sub">From multi-document vector assistants to autonomous dispatch networks and commerce platforms. Filter by category or inspect architecture details.</p>
     </div>
-    <div class="filter rv" role="group" aria-label="Filter projects by domain">
-      <button class="chip" type="button" data-f="all" aria-pressed="true">All Projects</button>
-      <button class="chip" type="button" data-f="ai-rag" aria-pressed="false">AI / RAG</button>
-      <button class="chip" type="button" data-f="fullstack" aria-pressed="false">Full Stack</button>
-      <button class="chip" type="button" data-f="cloud-api" aria-pressed="false">Backend &amp; API</button>
+    <div class="filter-wrap rv">
+      <div class="filter" role="group" aria-label="Filter projects by domain">
+        <button class="chip" type="button" data-f="all" aria-pressed="true">All Projects</button>
+        <button class="chip" type="button" data-f="ai-rag" aria-pressed="false">AI / RAG</button>
+        <button class="chip" type="button" data-f="fullstack" aria-pressed="false">Full Stack</button>
+        <button class="chip" type="button" data-f="cloud-api" aria-pressed="false">Backend &amp; API</button>
+      </div>
       <p class="count" id="count" aria-live="polite">Showing 6 of 6</p>
     </div>
   </div>
@@ -521,23 +534,23 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
           <svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="CareCircle AI visual system">
             <rect class="c4" width="480" height="300"/>
             <!-- Live Badge -->
-            <rect class="c5 o" x="24" y="24" width="130" height="28" rx="14"/>
-            <circle cx="40" cy="38" r="5" fill="#10b981"/>
-            <text class="ts c6" x="52" y="42" font-size="10">AWS CLOUDFRONT</text>
+            <rect class="c5 o" x="24" y="22" width="148" height="28" rx="14"/>
+            <circle cx="40" cy="36" r="4.5" fill="#10b981"/>
+            <text class="ts c6" x="52" y="40" font-size="9.5" letter-spacing="0.12em">AWS CLOUDFRONT</text>
             <!-- Central Node Network -->
-            <circle class="c5 o" cx="240" cy="150" r="100"/>
-            <circle class="c1 o" cx="240" cy="150" r="60"/>
-            <path class="c5 o" d="M240 106 C214 146 206 168 206 182 C206 202 222 218 240 218 C258 218 274 202 274 182 C274 168 266 146 240 106 Z"/>
-            <circle class="c2 o" cx="110" cy="85" r="26"/>
-            <circle class="c3 o" cx="370" cy="85" r="26"/>
-            <circle class="c6 o" cx="110" cy="215" r="26"/>
-            <circle class="c1 o" cx="370" cy="215" r="26"/>
-            <line x1="134" y1="98" x2="185" y2="128" stroke="var(--ink)" stroke-width="3" stroke-dasharray="4 4"/>
-            <line x1="346" y1="98" x2="295" y2="128" stroke="var(--ink)" stroke-width="3" stroke-dasharray="4 4"/>
-            <line x1="134" y1="202" x2="185" y2="172" stroke="var(--ink)" stroke-width="3" stroke-dasharray="4 4"/>
-            <line x1="346" y1="202" x2="295" y2="172" stroke="var(--ink)" stroke-width="3" stroke-dasharray="4 4"/>
-            <rect class="c5 o" x="140" y="254" width="200" height="32" rx="16"/>
-            <text class="t c6" x="240" y="276" text-anchor="middle" font-size="13">AUTONOMOUS DISPATCH</text>
+            <circle class="c5 o" cx="240" cy="144" r="92"/>
+            <circle class="c1 o" cx="240" cy="144" r="56"/>
+            <path class="c5 o" d="M240 102 C216 140 208 160 208 174 C208 192 222 206 240 206 C258 206 272 192 272 174 C272 160 264 140 240 102 Z"/>
+            <circle class="c2 o" cx="110" cy="82" r="25"/>
+            <circle class="c3 o" cx="370" cy="82" r="25"/>
+            <circle class="c6 o" cx="110" cy="206" r="25"/>
+            <circle class="c1 o" cx="370" cy="206" r="25"/>
+            <line x1="133" y1="95" x2="185" y2="124" stroke="var(--ink)" stroke-width="3" stroke-dasharray="4 4"/>
+            <line x1="347" y1="95" x2="295" y2="124" stroke="var(--ink)" stroke-width="3" stroke-dasharray="4 4"/>
+            <line x1="133" y1="193" x2="185" y2="164" stroke="var(--ink)" stroke-width="3" stroke-dasharray="4 4"/>
+            <line x1="347" y1="193" x2="295" y2="164" stroke="var(--ink)" stroke-width="3" stroke-dasharray="4 4"/>
+            <rect class="c5 o" x="140" y="244" width="200" height="30" rx="15"/>
+            <text class="t c6" x="240" y="265" text-anchor="middle" font-size="12.5">AUTONOMOUS DISPATCH</text>
           </svg>
         </figure>
       </div>
@@ -714,14 +727,14 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
             <text class="ts c6" x="220" y="57" font-size="9">LLAMA 3.3 70B • GROQ</text>
             <!-- Dashboard stats -->
             <rect class="c2 o" x="55" y="80" width="175" height="70" rx="10"/>
-            <text class="ts c5" x="70" y="103" font-size="10">TOTAL MEETING BURN</text>
-            <text class="t c5" x="70" y="134" font-size="24">$18,450</text>
+            <text class="ts c5" x="70" y="103" font-size="9.5">TOTAL MEETING BURN</text>
+            <text class="t c5" x="70" y="132" font-size="21">$18,450</text>
             <rect class="c4 o" x="245" y="80" width="180" height="70" rx="10"/>
-            <text class="ts c6" x="260" y="103" font-size="10">RESCUE POTENTIAL</text>
-            <text class="t c6" x="260" y="134" font-size="24">+$5,800 / MO</text>
+            <text class="ts c6" x="258" y="103" font-size="9.5">RESCUE POTENTIAL</text>
+            <text class="t c6" x="258" y="132" font-size="20">+$5.8K / MO</text>
             <!-- Cost Burn chart bars & Anomaly alert -->
             <rect class="c6" x="55" y="165" width="220" height="90" rx="10"/>
-            <text class="ts c4" x="70" y="188" font-size="10">DEPARTMENT COST PROFILE</text>
+            <text class="ts c4" x="70" y="188" font-size="9.5">DEPARTMENT COST PROFILE</text>
             <rect class="c1" x="70" y="225" width="28" height="20" rx="3"/>
             <rect class="c4" x="108" y="205" width="28" height="40" rx="3"/>
             <rect class="c3" x="146" y="215" width="28" height="30" rx="3"/>
@@ -729,9 +742,9 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
             <rect class="c2" x="222" y="210" width="28" height="35" rx="3"/>
             <!-- AI Anomaly Box -->
             <rect class="c3 o" x="290" y="165" width="135" height="90" rx="10"/>
-            <text class="ts c6" x="302" y="188" font-size="9">AI BLOAT DETECT</text>
-            <text class="t c6" x="302" y="215" font-size="15">12 STANDUPS</text>
-            <text class="ts c6" x="302" y="238" font-size="9">&gt;10 ATTENDEES</text>
+            <text class="ts c6" x="302" y="188" font-size="8.5">AI BLOAT DETECT</text>
+            <text class="t c6" x="302" y="213" font-size="13">12 STANDUPS</text>
+            <text class="ts c6" x="302" y="236" font-size="8.5">&gt;10 ATTENDEES</text>
           </svg>
         </figure>
       </div>
@@ -772,19 +785,40 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
         <figure class="case-art">
           <svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="LaunchPilot AI Architecture">
             <rect class="c5" width="480" height="300"/>
-            <rect class="c2 o" x="50" y="90" width="100" height="120" rx="12"/>
-            <text class="t c5" x="100" y="145" text-anchor="middle" font-size="16">TASK</text>
-            <text class="ts c5" x="100" y="170" text-anchor="middle" font-size="10">PROMPT</text>
-            <line x1="150" y1="150" x2="195" y2="150" stroke="var(--ink)" stroke-width="4" stroke-dasharray="4 4"/>
-            <rect class="c4 o" x="195" y="75" width="110" height="150" rx="12"/>
-            <text class="t c6" x="250" y="140" text-anchor="middle" font-size="16">LANGGRAPH</text>
-            <text class="ts c6" x="250" y="165" text-anchor="middle" font-size="10">AGENT CHAIN</text>
-            <line x1="305" y1="150" x2="350" y2="150" stroke="var(--ink)" stroke-width="4" stroke-dasharray="4 4"/>
-            <rect class="c3 o" x="350" y="90" width="100" height="120" rx="12"/>
-            <text class="t c6" x="400" y="145" text-anchor="middle" font-size="15">ACTION</text>
-            <text class="ts c6" x="400" y="170" text-anchor="middle" font-size="10">DEPLOY</text>
-            <rect class="c6" x="140" y="250" width="200" height="28" rx="14"/>
-            <text class="ts c4" x="240" y="268" text-anchor="middle" font-size="11">AGENT DISPATCH ENGINE</text>
+            <!-- Top Architecture Badge -->
+            <rect class="c6" x="140" y="24" width="200" height="26" rx="13"/>
+            <text class="ts c4" x="240" y="41" text-anchor="middle" font-size="9.5">MULTI-AGENT PIPELINE</text>
+            <!-- Step 1: User Task Box -->
+            <rect class="c2 o" x="38" y="72" width="104" height="140" rx="14"/>
+            <rect class="c5 o" x="50" y="84" width="80" height="22" rx="11"/>
+            <text class="ts c6" x="90" y="99" text-anchor="middle" font-size="9">INPUT</text>
+            <text class="t c5" x="90" y="148" text-anchor="middle" font-size="16">TASK</text>
+            <text class="ts c5" x="90" y="174" text-anchor="middle" font-size="9.5">PROMPT</text>
+            <!-- Arrow 1: Connecting Task to LangGraph -->
+            <path d="M142 142 L176 142" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round"/>
+            <polygon points="176,136 185,142 176,148" fill="var(--ink)"/>
+            <!-- Step 2: LangGraph Core Orchestrator -->
+            <rect class="c4 o" x="185" y="58" width="118" height="170" rx="14"/>
+            <rect class="c6" x="199" y="70" width="90" height="22" rx="11"/>
+            <text class="ts c4" x="244" y="85" text-anchor="middle" font-size="8.5">REASONING</text>
+            <text class="t c6" x="244" y="132" text-anchor="middle" font-size="15">LANGGRAPH</text>
+            <text class="ts c6" x="244" y="156" text-anchor="middle" font-size="9">AGENT GRAPH</text>
+            <circle cx="224" cy="186" r="5.5" fill="var(--deep)"/>
+            <circle cx="244" cy="186" r="5.5" fill="var(--hot)"/>
+            <circle cx="264" cy="186" r="5.5" fill="var(--sweet)"/>
+            <!-- Arrow 2: Connecting LangGraph to Action -->
+            <path d="M303 142 L333 142" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round"/>
+            <polygon points="333,136 342,142 333,148" fill="var(--ink)"/>
+            <!-- Step 3: Action Execution Box -->
+            <rect class="c3 o" x="342" y="72" width="104" height="140" rx="14"/>
+            <rect class="c5 o" x="354" y="84" width="80" height="22" rx="11"/>
+            <text class="ts c6" x="394" y="99" text-anchor="middle" font-size="9">OUTPUT</text>
+            <text class="t c6" x="394" y="148" text-anchor="middle" font-size="16">ACTION</text>
+            <text class="ts c6" x="394" y="174" text-anchor="middle" font-size="9.5">TOOL DEPLOY</text>
+            <!-- Bottom Dispatch Status Pill -->
+            <rect class="c6" x="120" y="248" width="240" height="30" rx="15"/>
+            <circle cx="138" cy="263" r="4.5" fill="#10b981"/>
+            <text class="ts c5" x="246" y="267" text-anchor="middle" font-size="10">STRUCTURED JSON VALIDATED</text>
           </svg>
         </figure>
       </div>
@@ -1251,14 +1285,32 @@ const reduce=matchMedia('(prefers-reduced-motion:reduce)'),fine=matchMedia('(hov
 /* Prevent default on empty hashes */
 document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href="#"]');if(a)e.preventDefault();});
 
-/* Mobile Menu Toggle */
+/* Mobile Menu Toggle & Smart Hide Header on Scroll */
 const hd=$('.hd'),mb=$('#mb'),nav=$('#nav');
 if(hd&&mb&&nav){
-  const set=o=>{hd.classList.toggle('open',o);mb.setAttribute('aria-expanded',String(o));if(mb.firstElementChild)mb.firstElementChild.textContent=o?'Close':'Menu';};
+  const set=o=>{
+    hd.classList.toggle('open',o);
+    mb.setAttribute('aria-expanded',String(o));
+    if(mb.firstElementChild)mb.firstElementChild.textContent=o?'Close':'Menu';
+    if(o)hd.classList.remove('hd-hidden');
+  };
   mb.addEventListener('click',()=>set(!hd.classList.contains('open')));
   nav.addEventListener('click',e=>{if(e.target.closest('a'))set(false);});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});
   document.addEventListener('click',e=>{if(!hd.contains(e.target))set(false);});
+
+  let lastScrollY = window.scrollY || 0;
+  window.addEventListener('scroll', () => {
+    const curY = window.scrollY || 0;
+    if (!hd.classList.contains('open')) {
+      if (curY > lastScrollY + 6 && curY > 50) {
+        hd.classList.add('hd-hidden');
+      } else if (curY < lastScrollY - 6 || curY <= 20) {
+        hd.classList.remove('hd-hidden');
+      }
+    }
+    lastScrollY = curY;
+  }, { passive: true });
 }
 
 /* Colorway Switcher */
@@ -1322,6 +1374,14 @@ if(wall){
   const measure=()=>rows.forEach(r=>r.forEach(t=>{if(t.b){t.b.style.transform='';t.p=probe(t.b);}}));
   const frame=now=>{
     raf=0;
+    if(window.innerWidth<=860){
+      rows.forEach(r=>r.forEach(t=>{
+        t.el.style.removeProperty('--g');
+        t.el.style.removeProperty('--w');
+        if(t.b)t.b.style.transform='';
+      }));
+      return;
+    }
     const wr=wall.getBoundingClientRect(),idle=!active&&!reduce.matches;
     if(idle&&(tick++&1)){raf=requestAnimationFrame(frame);return;}
     const vx=active?px:idle?wr.left+wr.width*(.5+.44*Math.sin((now-t0)/2400)):null;
