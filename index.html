@@ -190,7 +190,8 @@ html.js .case:not(.open) .case-in{visibility:hidden;transition:visibility 0s .6s
 .about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,6vw,90px);align-items:center;margin-top:clamp(40px,5vw,72px)}
 .portrait{position:relative;max-width:470px;margin:0 0 0 14px;transform:rotate(-3deg)}
 .ph{aspect-ratio:4/5;border:var(--line) solid var(--ink);border-radius:var(--r);overflow:hidden;background:var(--zing);box-shadow:10px 10px 0 var(--ink);position:relative;display:flex;align-items:center;justify-content:center}
-.ph-avatar{width:100%;height:100%;object-fit:cover;background:linear-gradient(135deg,var(--hot) 0%,var(--sweet) 100%)}
+.ph-avatar{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;transition:transform .4s var(--ease)}
+.ph:hover .ph-avatar{transform:scale(1.04)}
 .portrait .burst{position:absolute;left:-34px;top:-38px;width:clamp(100px,11vw,144px);transform:rotate(-10deg)}
 .portrait .burst path{fill:var(--hot);stroke:var(--ink);stroke-width:2.6}
 .portrait .burst text{font:900 17px var(--display);font-variation-settings:"wdth" 90;text-transform:uppercase;fill:var(--ink)}
@@ -844,11 +845,11 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
       <figure class="portrait rv">
         <!-- Stylized Portrait Card -->
         <div class="ph">
-          <svg viewBox="0 0 320 400" class="ph-avatar" role="img" aria-label="Sourab Reddy Avatar">
+          <img src="assets/portrait.jpg" alt="Sourab Reddy — AI Engineer &amp; Full-Stack Developer" class="ph-avatar" width="768" height="1024" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <svg viewBox="0 0 320 400" class="ph-avatar" role="img" aria-label="Sourab Reddy Avatar" style="display:none">
             <rect width="320" height="400" fill="var(--paper)"/>
             <circle cx="160" cy="140" r="65" fill="var(--hot)" stroke="var(--ink)" stroke-width="4"/>
             <path d="M70 340 C70 240 250 240 250 340 Z" fill="var(--deep)" stroke="var(--ink)" stroke-width="4"/>
-            <!-- Glasses / Developer character detail -->
             <rect x="120" y="125" width="35" height="25" rx="6" fill="var(--zing)" stroke="var(--ink)" stroke-width="3"/>
             <rect x="165" y="125" width="35" height="25" rx="6" fill="var(--zing)" stroke="var(--ink)" stroke-width="3"/>
             <line x1="155" y1="137" x2="165" y2="137" stroke="var(--ink)" stroke-width="3"/>
