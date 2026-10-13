@@ -140,6 +140,10 @@ html.js .rv.in{opacity:1;transform:none}
 .avail .ring{transform-box:view-box;transform-origin:50% 50%;animation:spin 16s linear infinite}
 .avail text{font:800 20px var(--display);font-variation-settings:"wdth" 110;letter-spacing:.06em;text-transform:uppercase;fill:var(--ink)}
 @keyframes spin{to{transform:rotate(360deg)}}
+@keyframes mobileHeroIn{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes mobileTileBob{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-5px) scale(1.035)}}
+@keyframes mobileWallGlow{0%,100%{box-shadow:var(--sh)}50%{box-shadow:8px 8px 0 var(--ink),0 0 0 4px rgba(255,245,228,.22)}}
+@keyframes mobileArtFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 .hero-b{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(20px,4vw,64px);align-items:end;margin-top:clamp(26px,3vw,44px)}
 .pitch{font:800 clamp(28px,3.7vw,60px)/1 var(--display);font-variation-settings:"wdth" 76;text-wrap:balance}
 .pitch em{--wide:120}
@@ -343,17 +347,25 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   .sw{margin:12px 0;gap:6px;justify-content:center}.sw button{width:44px}.sw button::before{width:26px;height:26px}
   #nav .btn.ink{min-height:48px}
   .head.split,.hero-b,.about,.recog,.contact{grid-template-columns:minmax(0,1fr)}
-  .wall{--th:clamp(76px,20vw,120px)!important}
+  .hero{min-height:auto;justify-content:flex-start}
+  .hero .mk,.wall-box,.hero-b,.hero-f{animation:mobileHeroIn .46s var(--ease) both}
+  .wall-box{animation-delay:.04s}
+  .hero-b{animation-delay:.09s}
+  .hero-f{animation-delay:.14s}
+  .wall{--th:clamp(76px,20vw,120px)!important;animation:mobileWallGlow 5.6s ease-in-out infinite}
   .wall-r .tile{flex:1 1 0!important;width:16.666%!important;min-width:0!important;overflow:hidden!important}
   .wall-r:last-child .tile{width:20%!important}
-  .wall-r .tile b{font-size:clamp(30px,8.5vw,46px)!important;line-height:1!important;max-width:100%!important;text-align:center!important;font-variation-settings:"wdth" 55!important;letter-spacing:-.03em!important;transform:none!important}
+  .wall-r .tile b{font-size:clamp(30px,8.5vw,46px)!important;line-height:1!important;max-width:100%!important;text-align:center!important;font-variation-settings:"wdth" 55!important;letter-spacing:-.03em!important;animation:mobileTileBob 3.6s ease-in-out infinite;animation-delay:calc(var(--i,0)*.12s)}
+  .wall-r:nth-child(1) .tile:nth-child(1){--i:1}.wall-r:nth-child(1) .tile:nth-child(2){--i:2}.wall-r:nth-child(1) .tile:nth-child(3){--i:3}.wall-r:nth-child(1) .tile:nth-child(4){--i:4}.wall-r:nth-child(1) .tile:nth-child(5){--i:5}.wall-r:nth-child(1) .tile:nth-child(6){--i:6}
+  .wall-r:nth-child(2) .tile:nth-child(1){--i:5}.wall-r:nth-child(2) .tile:nth-child(2){--i:4}.wall-r:nth-child(2) .tile:nth-child(3){--i:3}.wall-r:nth-child(2) .tile:nth-child(4){--i:2}.wall-r:nth-child(2) .tile:nth-child(5){--i:1}
+  .wall.touching .tile b{animation-duration:1.15s}
   .tile i,.hero .mk span+span{display:none}
   .wall-box{margin-top:clamp(16px,3.5vw,28px);margin-bottom:8px}
   .avail{position:absolute;right:10px;top:auto!important;bottom:-24px!important;width:66px!important;height:66px!important;z-index:10;transform:rotate(6deg);filter:drop-shadow(3px 3px 0 var(--ink))}
   .avail text{font-size:19px}
   h2 em{white-space:normal!important;display:inline!important}
   .case-top{grid-template-columns:minmax(0,1fr);padding:24px 0 28px}
-  .case .case-art{order:-1;transform:none!important;box-shadow:6px 6px 0 var(--shc,var(--ink))}
+  .case .case-art{order:-1;transform:none!important;box-shadow:6px 6px 0 var(--shc,var(--ink));animation:mobileArtFloat 6.5s ease-in-out infinite}
   .case-top:hover .case-art{transform:none!important}
   .case-grid{grid-template-columns:minmax(0,1fr)}
   .res{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
@@ -366,12 +378,19 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   .portrait .ph{box-shadow:6px 6px 0 var(--ink)}
   .portrait .burst{left:-16px;top:-24px;width:clamp(88px,20vw,110px);transform:rotate(-6deg)}
   .portrait .stk{right:-6px;bottom:16px;transform:rotate(4deg)}
+  html.js .rv{opacity:1;transform:none}
+  html.js .mfx{opacity:1;transform:none;transition:opacity .58s var(--ease),transform .58s var(--ease)}
+  html.js .mfx:not(.in){opacity:0;transform:translateY(20px)}
+  html.js .mfx:nth-child(2n){transition-delay:.05s}
+  .vcur{display:none!important}
+  html.has-vcur .case-top{cursor:pointer}
 }
 @media (max-width:560px){
   :root{--hd:52px;--pad:14px;--r:14px}
   body{font-size:16px}
-  section{padding:clamp(74px,11vw,94px) var(--pad) calc(var(--sheet) + clamp(36px,5vw,54px))}
+  section{padding:clamp(64px,10vw,86px) var(--pad) calc(var(--sheet) + clamp(34px,5vw,52px))}
   .hero{padding-top:clamp(84px,16vw,104px)}
+  .hd{left:10px;right:10px;padding-left:12px}
   .wall-r .tile b{font-size:clamp(22px,6.8vw,34px)!important;line-height:1!important;letter-spacing:-.04em!important}
   .mk{font-size:11.5px;letter-spacing:.12em;gap:8px;margin-bottom:14px}
   .mk b{min-width:38px;height:26px;font-size:12.5px}
@@ -382,19 +401,25 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   .mb{min-height:36px;padding:0 13px;font-size:12px}
   .avail{width:56px!important;height:56px!important;bottom:-16px!important;right:6px!important;top:auto!important}
   .avail text{font-size:17px}
-  .hero-b{margin-top:clamp(30px,6.5vw,40px)!important}
+  .hero-b{gap:18px;margin-top:clamp(24px,5.8vw,34px)!important}
   .pitch{font-size:clamp(20px,5.8vw,28px);word-break:break-word;overflow-wrap:break-word}
+  .hero-c p{font-size:15.5px;line-height:1.5}
   .cta{flex-direction:column;align-items:stretch}
   .cta .btn{width:100%;justify-content:center}
-  .hero-f{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;font-size:11px!important;letter-spacing:.08em!important}
+  .hero-f{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;font-size:11px!important;letter-spacing:.08em!important}
   .hero-f li{word-break:break-word;overflow-wrap:break-word}
-  .filter .chip{min-height:38px;padding:0 14px;font-size:13px}
+  .filter{flex-wrap:wrap;overflow:visible;padding:0;gap:8px}
+  .filter .chip{flex:1 1 calc(50% - 4px);justify-content:center;min-height:40px;padding:0 10px;font-size:13px;text-align:center}
+  .filter .chip:first-child{flex-basis:100%}
   .case-no{font-size:11px!important;letter-spacing:.1em!important;flex-wrap:wrap!important;gap:6px!important}
   .case-no::before{width:20px!important}
-  .case-t{font-size:clamp(24px,6.5vw,34px);word-break:break-word;overflow-wrap:break-word}
+  .case-t{margin:10px 0 12px;font-size:clamp(24px,6.5vw,34px);word-break:break-word;overflow-wrap:break-word}
+  .case-line{font-size:15.5px;line-height:1.48}
+  .tags{gap:7px;margin:14px 0 18px}
+  .stk{min-height:28px;padding:0 10px;font-size:11px;letter-spacing:.08em}
   .actions-row{gap:8px;margin-top:14px}
   .case-btn{width:100%;justify-content:center}
-  .actions-row .repo-btn,.actions-row .live-btn{flex:1 1 calc(50% - 6px);justify-content:center;padding:0 10px;font-size:12px;min-height:44px}
+  .actions-row .repo-btn,.actions-row .live-btn{flex:1 1 calc(50% - 4px);justify-content:center;padding:0 8px;font-size:11.5px;min-height:44px;white-space:normal;text-align:center}
   .meta div{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:8px 0;font-size:13.5px}
   .meta dt{font-size:10.5px;letter-spacing:.12em}
   .meta dd{width:100%;word-break:break-word;overflow-wrap:break-word}
@@ -403,11 +428,13 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   .res li{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
   .res b{font-size:clamp(32px,8vw,42px);line-height:1}
   .facts{grid-template-columns:minmax(0,1fr)}
+  .bio{font-size:clamp(19px,5vw,24px);line-height:1.28}
+  .bio+p{font-size:15.5px;line-height:1.48}
   .facts div{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:10px 0;flex-wrap:wrap}
   .facts dt{white-space:normal;font-size:11px;letter-spacing:.12em}
   .facts dd{min-width:0;word-break:break-word;overflow-wrap:break-word;text-align:right}
   .two,.steps,.foot,.form-grid{grid-template-columns:minmax(0,1fr)}
-  .svc li{grid-template-columns:minmax(0,1fr);row-gap:8px;padding:18px 0;margin:0}
+  .svc li{grid-template-columns:minmax(0,1fr);row-gap:8px;padding:20px 0;margin:0}
   .svc li>span:first-child{display:inline-block;font-size:13px;color:var(--zing);margin-bottom:2px}
   .svc h3{font-size:clamp(24px,6.5vw,34px);line-height:1.05;word-break:break-word}
   .svc h3 span{white-space:normal!important;display:inline!important}
@@ -415,6 +442,7 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   .svc p small{word-break:break-word;overflow-wrap:break-word}
   .svc .fee{grid-column:auto;display:flex;align-items:baseline;gap:8px;font-size:16px}
   .svc .fee small{display:inline;margin:0}
+  .steps{gap:22px;margin-top:24px}
   .step{display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:12px}
   .step .num{width:52px;height:52px;font-size:19px;grid-row:span 3}
   .step h3{font-size:clamp(22px,5.5vw,32px);word-break:break-word}
@@ -427,13 +455,25 @@ html.has-vcur .case-top a,html.has-vcur .case-top button{cursor:pointer}
   .exp-list .row p small{display:block;word-break:break-word;overflow-wrap:break-word}
   .exp-list .row p a{word-break:break-all}
   .exp-list .row .stk{flex:none;align-self:flex-start}
+  .row{min-height:0;padding:14px 0}
+  .row:hover{padding-left:0}
   .card{transform:none!important;box-shadow:6px 6px 0 var(--ink)!important;padding:20px 14px!important}
   .card h3{font-size:clamp(22px,5.5vw,30px);word-break:break-word}
   .fld input[type=text],.fld input[type=email],.fld textarea{font-size:16px}
   .mail{font-size:clamp(15px,4.4vw,22px);overflow-wrap:break-word;word-break:break-all}
+  .foot{gap:26px}
   .foot-n ul{columns:2}
   .ways{grid-template-columns:minmax(0,1fr)}
   .foot-big{font-size:clamp(28px,8.5vw,56px)!important}
+}
+@media (max-width:360px){
+  :root{--pad:12px}
+  .brand{font-size:13.5px}
+  .brand svg{width:18px;height:18px}
+  .mb{padding:0 11px;font-size:11.5px}
+  .actions-row .repo-btn,.actions-row .live-btn{width:100%;flex-basis:100%}
+  .hero-f{grid-template-columns:minmax(0,1fr)}
+  .row{padding-inline:0}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -1365,6 +1405,13 @@ if('IntersectionObserver' in window&&!reduce.matches){
   rv.forEach(el=>io.observe(el));
 }else rv.forEach(el=>el.classList.add('in'));
 
+/* Lightweight mobile reveals for dense sections */
+const mobileFx=$$('.case-top,.about,.svc li,.step,.recog>div,.contact>*,.foot>*');
+if('IntersectionObserver' in window&&!reduce.matches&&matchMedia('(max-width:860px)').matches){
+  const mio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');mio.unobserve(e.target);}}),{rootMargin:'0px 0px -12% 0px',threshold:.08});
+  mobileFx.forEach(el=>{el.classList.add('mfx');mio.observe(el);});
+}else mobileFx.forEach(el=>el.classList.add('in'));
+
 /* Variable Font Width-Fitting Solver */
 const probe=el=>{
   const s=el.style,o=s.fontVariationSettings;
@@ -1442,7 +1489,14 @@ if(wall){
   const go=()=>{if(!raf)raf=requestAnimationFrame(frame);};
   wall.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;px=e.clientX;py=e.clientY;active=true;go();});
   wall.addEventListener('pointerleave',()=>{active=false;go();});
-  wall.addEventListener('pointerdown',e=>{if(e.pointerType!=='touch')return;px=e.clientX;py=e.clientY;active=true;go();clearTimeout(offT);offT=setTimeout(()=>{active=false;go();},1600);});
+  wall.addEventListener('pointerdown',e=>{
+    if(e.pointerType!=='touch')return;
+    wall.classList.add('touching');
+    px=e.clientX;py=e.clientY;active=true;go();clearTimeout(offT);
+    offT=setTimeout(()=>{active=false;wall.classList.remove('touching');go();},900);
+  });
+  wall.addEventListener('pointercancel',()=>wall.classList.remove('touching'));
+  wall.addEventListener('pointerup',()=>{clearTimeout(offT);offT=setTimeout(()=>wall.classList.remove('touching'),260);});
   if('IntersectionObserver' in window)new IntersectionObserver(es=>{inView=es[0].isIntersecting;if(inView)go();}).observe(wall);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)go();});
 }
